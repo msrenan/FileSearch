@@ -139,7 +139,7 @@ fn proxy_handler(mut stream: TcpStream, secret_state: SharedSecret) {
 /// Passes Forward a request of a client to the server
 /// 
 /// # Arguments
-/// * `request: Request` - Countainer that holds request data.
+/// * `request: Request` - Container that holds request data.
 /// * `mut stream: TcpStream` - Stream that holds connection with client.
 fn proxy_forward(request: Request, mut stream: TcpStream) {
     let mut server_stream = TcpStream::connect("127.0.0.1:1445").unwrap();
