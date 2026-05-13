@@ -336,7 +336,7 @@ fn route(request: Request, mut stream: TcpStream) {
 
         let mut file = fs::File::create(filepath).unwrap();
 
-        file.write_all(&request.body.trim_end_Ses('\0').as_bytes()).unwrap();
+        file.write_all(&request.body.trim().trim_end_matches('\0').as_bytes()).unwrap();
 
         report(format!("Client's file has been created"));
 
